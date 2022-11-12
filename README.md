@@ -1,75 +1,118 @@
-# Rust-template
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="cmrust1.jpg" alt="Project logo"></a>
+</p>
 
-![Build Status](https://github.com/zaszi/rust-template/workflows/Rust/badge.svg)
+<h3 align="center">Simple Actions</h3>
 
-[![Crates.io](https://img.shields.io/crates/v/rust-gh-example.svg)](https://crates.io/crates/rust-gh-example)
-[![Docs.rs](https://docs.rs/rust-gh-example/badge.svg)](https://docs.rs/rust-gh-example)
-[![CI](https://github.com/rust-github/rust-gh-example/workflows/CI/badge.svg)](https://github.com/rust-github/rust-gh-example/actions)
-[![Coverage Status](https://coveralls.io/repos/github/rust-github/rust-gh-example/badge.svg?branch=main)](https://coveralls.io/github/rust-github/rust-gh-example?branch=main)
+<div align="center">
 
-A project template for Rust, helping to structure your projects according to best practices and avoid doing the same setup time and again.
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+
+</div>
+
+---
+
+<p align="center">A GUI driven simple demo in RUST that reads a CSV file of all the US Cities and their LAT/LONGs. Choosing two random cities each time it's run from the list of cities in the CVS file. The distance between those two cities is calculated using the great circle method and then display through GTK dialog box with various buttons.
+    <br> 
+</p>
+
+## 🧐 About <a name = "about"></a>
+
+_Cavaet_ : Those viewing this repo for the first time may be horrified by the color choices in the css.  As the author I am not of an artistic nature and need to correct the css for better visual appeal.
+
+### How it works
+
+  1. Main function begins here which calls for the UI creation.
+ 
+  2. build_ui uses the grid layout method from gtk to build the GUI.
+    
+    a. build_ui call the style.css file for the colors and font styles in the app.
+    
+    b. build_ui makes "Two Random Cities" button active.
+    
+    c. "Two Random Cities" is a connected_active button from gtk4 using the module of the same name.
+
+ 3. connect_active call on the greatcircle function.
+ 
+  a. fn greatcircle call on the rand crate to generate two random numbers
+
+  b. fn greatcircle next reads the comma separated values file uscities matching the city_id to the random numbers generated.
+
+  c. the data for these two selected cities is stored in the struct CityData
+  
+  d. fn greatcircle then returns the two cities with their respective states and the distance between the in the struct answer.
+
+ 4. The struct answer is passed back to build_ui, and displayed on the screen as text in the variable label.
+ 
+  a. build_ui monitors the buttons labeled "Quit" and "Close" which both kill the app.
+
+  b. the "Hello World" button prints the test 'Hello World' in the terminal window.
+
+  c. the "Hello Again" button prints the test 'Hello World Again' in the terminal window.
+
+  d. build_ui then loops back to allow a second choice.
 
 ## Features
 
-- Suitable for both a binary or library project
-- Structured according to both Git and Rust best practices
-  - Includes readme, license, changelog, gitignore and gitattributes
-  - Extensive Cargo manifest
-  - [Separation of concerns for binary projects](https://doc.rust-lang.org/stable/book/ch12-03-improving-error-handling-and-modularity.html?highlight=separation,concerns#separation-of-concerns-for-binary-projects)
-- Multiplatform support - The template is compatible with Linux, MacOS and Windows
-- WebAssembly support
-  - Conditionally includes `console_error_panic_hook` improving browser error messages.
-  - Conditionally includes `wee_alloc` for a smaller memory footprint.
-  - Dedicated `README_WEB.md` for WebAssembly usage and building instructions
-- Continuous Integration support with Github Actions
-  - Rust: Triggers the following on every push or pull request, using the latest stable toolchain:
-    - `cargo fmt`: Ensure uniform code formatting
-    - `cargo clippy`: Ensure idiomatic code
-    - `cargo check`: Ensure compilation succeeds on Linux, MacOS, Windows and WebAssembly
-    - `cargo test`: Run all tests
-    - `cargo bench`: Run all benchmarks
-  - Release: Create a new GitHub Release draft when a tag starting with `v` is pushed.
-  - Publish: Automated publishing of binary assets for a GitHub Release:
-    - Build binaries for Linux, MacOS, Windows and WebAssembly
-    - Archive binaries with a license, readme and appropate files for each platform
-    - Upload archives as assets for the appropriate GitHub release
+The demo is built using the *container* method, where each block of the GUI is built within a *container*.
 
-## Download
 
-Available releases can be downloaded for your platform of choice on the [Releases](https://github.com/zaszi/rust-template/releases) page. These are merely provided as an example on how the asset uploading works, and aren't actually useful by themselves beyond what a `hello world` program can provide.
+### Build
+  
+Build using the "cargo run" command.
 
-## Usage
+### Docs
+  
+Using "cargo doc" generates the documentation in the .../src/target/docs directory.
 
-To tailor the template to your specific needs, simply go over the following
-checklist:
 
-1. The template assumes a binary project by default. If you require a library project:
-   1. Uncomment Cargo.lock in `.gitignore`.
-   1. Remove `src/main.rs`.
-   1. Remove `.github/workflows/publish.yml`
-1. Update `Cargo.toml` with the correct information for your project.
-1. Change the name inside the `LICENSE` file, or replace with a license of your choice.
-1. Update this `README.md` and `README_WEB.md` (do not forget to replace URLs).
-1. Update the `CHANGELOG` as you add to your project.
+### Debug
+  
+Automatically sets up debugging on the MacOS using VScode and LLDB Code extensions.
 
-## Building
+#### Prerequisites
 
-If desired, you can build Rust-template yourself. You will need a working `Rust` and `Cargo` setup. [Rustup](https://rustup.rs/) is the simplest way to set this up on either Windows, Mac or Linux.
+Need Vscode with extensions: 
+    - rust-analyzer
+    - code lldb
 
-Once the prerequisites have been installed, compilation on your native platform is as simple as running the following in a terminal:
+## ⛏️ Built Using <a name = "built_using"></a>
 
-```
-cargo build --release
-```
+- [vscode](https://www.vscode.com)
+- [rust](https://www.rustlang.org)
 
-## WebAssembly
+## ⛏️ Built Using <a name = "built_using"></a>
 
-Rust-template supports running as WebAssembly in the browser. See the [web readme](README_WEB.md) for instructions.
+- [rust](https://www.rustlang.org)
+- [simplemaps.com csv file](https://simplemaps.com/data/us-cities)
+- [csv crate from Burnt Sushi @BurntSushi](https://github.com/BurntSushi)
+- [rng crate from @Rand-Rust](https://github.com/rust-random)
+- 
 
-## Contribution
+## ✍️ Author <a name = "author"></a>
 
-Found a problem or have a suggestion? Feel free to open an issue.
+- [@iotandwearablesguy](https://github.com/iotandwearablesguy) - Idea & Initial work
 
-## License
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-Rust-template itself is licensed under the [MIT license](LICENSE) and includes this as the default project license.
+- [Thank You SimpleMaps.com for the csv file of city data](https://simplemaps.com/data/us-cities)
+
+
+
+ ## LICENSE
+
+_O'Shea-Dishongh No Harm License© 2022 Terrance O'Shea & Katherine Dishongh_
+
+<http://github.com/terryo-iotandwearablesguy>
+
+Subject to the following conditions:
+
+ 1. That the below copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ 2. That any use of the Software under this license never be used for harmful purposes, permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction,including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to
+ do so subject to the aforementioned restrictions.
+
+"Harmful purposes" as used herein means to not harm destroy or otherwise restrict humans, animals, or the environment. "Harmful purposes" includes, inter alia, the creation of weaponry, the guidance of weapons, limitation of food and services, damaging, contaminating or otherwise hazardous to the environmnet in any form, and/or restricting the freedom or movement of people.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE

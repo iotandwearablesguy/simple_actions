@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+"name": "Mac - Rust Debug", 
+"type": "lldb",
+"request": "launch",
+"program": "${workspaceRoot}/target/debug/simple_actions",
+//"cargo": {
+//"args": [
+   //  "test", "--no-run", "--lib", "--package=smf" "--verbose"
+//],
+//"filter": {
+//"name": "mylib",
+//"kind": "lib" }
+//},
+"args": [],
+"cwd": "${workspaceFolder}"
+        }
+    ]
+} 
