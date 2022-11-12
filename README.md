@@ -23,35 +23,27 @@ _Cavaet_ : Those viewing this repo for the first time may be horrified by the co
 
 ### How it works
 
-  1. Main function begins here which calls for the UI creation.
- 
-  2. build_ui uses the grid layout method from gtk to build the GUI.
+1. Main function begins here which calls for the UI creation.
+
+2. Build_ui uses the grid layout method from gtk to build the GUI.
     
-    a. build_ui call the style.css file for the colors and font styles in the app.
-    
-    b. build_ui makes "Two Random Cities" button active.
-    
-    c. "Two Random Cities" is a connected_active button from gtk4 using the module of the same name.
+ * build_ui call the style.css file for the colors and font styles in the app.
+ * build_ui makes "Two Random Cities" button active.
+ * "Two Random Cities" is a connected_active button from gtk4 using the module of the same name.
 
- 3. connect_active call on the greatcircle function.
+3. connect_active call on the greatcircle function.
  
-  a. fn greatcircle call on the rand crate to generate two random numbers
+ * fn greatcircle call on the rand crate to generate two random numbers
+ * fn greatcircle next reads the comma separated values file uscities matching the city_id to the random numbers generated.
+ * the data for these two selected cities is stored in the struct CityData
+ * fn greatcircle then returns the two cities with their respective states and the distance between the in the struct answer.
 
-  b. fn greatcircle next reads the comma separated values file uscities matching the city_id to the random numbers generated.
+4. The struct answer is passed back to build_ui, and displayed on the screen as text in the variable label.
 
-  c. the data for these two selected cities is stored in the struct CityData
-  
-  d. fn greatcircle then returns the two cities with their respective states and the distance between the in the struct answer.
-
- 4. The struct answer is passed back to build_ui, and displayed on the screen as text in the variable label.
- 
-  a. build_ui monitors the buttons labeled "Quit" and "Close" which both kill the app.
-
-  b. the "Hello World" button prints the test 'Hello World' in the terminal window.
-
-  c. the "Hello Again" button prints the test 'Hello World Again' in the terminal window.
-
-  d. build_ui then loops back to allow a second choice.
+  * build_ui monitors the buttons labeled "Quit" and "Close" which both kill the app.
+  * the "Hello World" button prints the test 'Hello World' in the terminal window.
+  * the "Hello Again" button prints the test 'Hello World Again' in the terminal window.
+  * build_ui then loops back to allow a second choice.
 
 ## Features
 
@@ -74,8 +66,9 @@ Automatically sets up debugging on the MacOS using VScode and LLDB Code extensio
 #### Prerequisites
 
 Need Vscode with extensions: 
-    - rust-analyzer
-    - code lldb
+
+ - rust-analyzer
+ - code lldb
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -97,8 +90,6 @@ Need Vscode with extensions:
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - [Thank You SimpleMaps.com for the csv file of city data](https://simplemaps.com/data/us-cities)
-
-
 
  ## LICENSE
 
