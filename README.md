@@ -26,6 +26,7 @@
 
 <h3 align="center"Screen Shot</h3>
 
+### Disclaimers
 
 _Cavaet_ : Those viewing this repo for the first time may be horrified by the color choices in the css.  As the author I am not of an artistic nature and need to correct the css for better visual appeal.
 
