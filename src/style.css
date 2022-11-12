@@ -1,0 +1,40 @@
+button#button-4{
+  color: rgb(255, 247, 0);
+  background: rgb(0, 34, 255);
+  font-weight: bold;
+}
+button#button-4:hover {
+  color: rgb(255, 251, 0);
+  background: rgb(255, 0, 0);
+}
+button#button{
+  color: rgb(255, 157, 0);
+  background: rgb(46, 8, 173);
+  font-weight: bold;
+}
+button#button:hover {
+  color: rgb(204, 255, 0);
+  background: rgb(255, 0, 81);
+  font-weight: bolder;
+}
+button#button-3{
+  color: rgb(208, 255, 0);
+  background: rgb(11, 102, 34);
+  font-weight:800;
+  font-style:italic;
+}
+label#label-2{
+  padding: 5%;
+  color: rgb(4, 4, 153);
+  background: rgb(208, 208, 211);
+  font-weight:800;
+  font-style:italic;
+}
+label#label-1{
+  color: rgb(1, 0, 2);
+  background: rgb(217, 217, 218);
+  font-weight:800;
+  font-style:italic;
+  font-weight: bolder;
+}
+
